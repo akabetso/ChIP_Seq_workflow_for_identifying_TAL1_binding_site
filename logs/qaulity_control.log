@@ -1,0 +1,11 @@
+starting alignment...
+starting data/quality_controled/G1E_input_R1_downsampled_SRR507859_trimmed.fastqsanger alignment...
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[E::main_mem] fail to open file `data/quality_controled/G1E_input_R2_downsampled_SRR507859_trimmed.fastqsanger'.
+[main_samview] fail to read the header from "-".
+samtools index: "data/aligned/G1E_input_mm10_aligned.bam" is in a format that cannot be usefully indexed
+Mapped data/quality_controled/G1E_input_R1_downsampled_SRR507859_trimmed.fastqsanger converted to bam sorted and created data/aligned/G1E_input_mm10_aligned.bam and its index.
+starting data/quality_controled/G1E_Tal1_R1_downsampled_SRR492444_trimmed.fastqsanger alignment...
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[E::main_mem] fail to open file `data/quality_controled/G1E_Tal1_R2_downsampled_SRR492444_trimmed.fastqsanger'.
+[main_samview] fail to read the header from "-".
