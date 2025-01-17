@@ -9,10 +9,11 @@ The aim of this study is to:
 - Investigate the dynamics of occupancy and the role in gene regulation of the transcription factor TAL1, a critical regulator of hematopoiesis, at multiple stages of hematopoietic differentiation. 
 
 ## Introduction
-let's start by defining a clearer picture of what is a Chromatin Immunoprecipitation Sequencing.
+let's start by defining a clearer picture of what is a Chromatin Immunoprecipitation Sequencing (ChIP-Seq).
 
-According [Ryuichiro Nakato et al.](https://www.sciencedirect.com/science/article/pii/S1046202320300591?via%3Dihub), ChIP is a central method in epigenomic research. It provides genome-wide chromatin analysis of histone modifications. How epigenomic signatures contribute to define cell identity and development, lineage specification and disease. Chromatin is generally tightly packed within the nucleus, but its structure can be altered through modifications such as methylation or acetylation. These modifications can lead to chromatin relaxation, which exposes the DNA and allows regulatory proteins, such as transcription factors and enhancers, to bind to the accessible regions of the genome and initiate transcription or other molecular processes.
+According [Ryuichiro Nakato et al.](https://www.sciencedirect.com/science/article/pii/S1046202320300591?via%3Dihub), ChIP-Seq is a central method in epigenomic research. It provides genome-wide chromatin analysis of histone modification describing how epigenomic signatures contribute to define cell identity and development, lineage specification and disease. Chromatin is generally tightly packed within the nucleus, but its structure can be altered through modifications such as methylation or acetylation. These modifications can lead to chromatin relaxation, which exposes the DNA and allows regulatory proteins, such as transcription factors and enhancers, to bind to the accessible regions of the genome and initiate transcription or other molecular processes.
 ![ChIP-Seq workflow](chipseq.png)
+
 Figure 1: A)Sample preparation, B) Canonical computational anylis workflow.
 
 
@@ -41,3 +42,15 @@ Reads below 20 phred score was trimmed with Trimmomatic in single-reads mode. Af
 
 ### Alignment
 
+The bwa alignment tool was used to map the reads to the reference genome with each read alligned to the different chromosomes of origin. There were a few contigs which could not be assiged within the reference genome (generally, this could represent novelty sequences within the reference genome or simply imperfection of the alignment tool). The output was directly converted from sam to bam and sorted to ease visualization with igv. 
+
+After mapping, we generated the correlation of the maping quallity between the samples. This equally help to assess the similarity between the replicates sequencing datasets and read counts for different datasets. it is aslo helpfull to estimated the expression levels based on chromatin modifications accross samples. *multBamSummary* from deeptools was used here.
+![bam correlation](results/coverage_correlation.png)
+
+Figure 2: Sample correlation (from bam files)
+
+We equally Identify the quality of the Immunoprecipitation within the experiment with *plotFingerprint* from deeptools. It provides a direct comparison of the ChIP signal between the replicates and the input file. Input files are generally not enriched and should posses a linear curve while ChIP are enriched and signal strenght will follow a sharp peak. From this, we can see that the ChIP enrichment of the G1E cell line was not the best because the curve line between the input and TAL1 is not the best for replicate 1 but was perfectly enriched for replicate 2. Megakaryocytes is shown to be better than G1E too from thisi analysis. 
+#![IP strength](results/G1E_signal_strenght.png)(results/Megakaryocyte_G1E_signal_strenght.png)
+<img src="results/G1E_signal_strenght.png" width="45%" /> <img src="results/Megakaryocyte_G1E_signal_strenght.png" width="45%" />
+
+Figure 3: Left) G1E, right) Megakaryocytes
