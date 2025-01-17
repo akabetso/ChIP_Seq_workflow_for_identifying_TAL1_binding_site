@@ -8,6 +8,15 @@ The aim of this study is to:
 - Reproduce the ChIP-Seq pipeline from [Galaxy](https://training.galaxyproject.org/training-material/topics/epigenetics/tutorials/tal1-binding-site-identification/tutorial.html)
 - Investigate the dynamics of occupancy and the role in gene regulation of the transcription factor TAL1, a critical regulator of hematopoiesis, at multiple stages of hematopoietic differentiation. 
 
+## Introduction
+let's start by defining a clearer picture of what is a Chromatin Immunoprecipitation Sequencing.
+
+According [Ryuichiro Nakato et al.](https://www.sciencedirect.com/science/article/pii/S1046202320300591?via%3Dihub), ChIP is a central method in epigenomic research. It provides genome-wide chromatin analysis of histone modifications. How epigenomic signatures contribute to define cell identity and development, lineage specification and disease. Chromatin is generally tightly packed within the nucleus, but its structure can be altered through modifications such as methylation or acetylation. These modifications can lead to chromatin relaxation, which exposes the DNA and allows regulatory proteins, such as transcription factors and enhancers, to bind to the accessible regions of the genome and initiate transcription or other molecular processes.
+![ChIP-Seq workflow](chipseq.png)
+Figure 1: A)Sample preparation, B) Canonical computational anylis workflow.
+
+
+
 ## Workflow from Galaxy
 1. Quality control
 2. Trimmin and clipping reads
