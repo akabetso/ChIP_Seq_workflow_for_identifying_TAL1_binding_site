@@ -50,6 +50,7 @@ After mapping, we generated the correlation of the maping quallity between the s
 Figure 2: Sample correlation (from bam files)
 
 We equally Identify the quality of the Immunoprecipitation within the experiment with *plotFingerprint* from deeptools. It provides a direct comparison of the ChIP signal between the replicates and the input file. Input files are generally not enriched and should posses a linear curve while ChIP are enriched and signal strenght will follow a sharp peak. From this, we can see that the ChIP enrichment of the G1E cell line was not the best because the curve line between the input and TAL1 is not the best for replicate 1 but was perfectly enriched for replicate 2.
+
 <img src="results/G1E_signal_strenght.png" width="45%" /> <img src="results/Megakaryocyte_G1E_signal_strenght.png" width="45%" />
 
 Figure 3: Left) G1E, right) Megakaryocytes
